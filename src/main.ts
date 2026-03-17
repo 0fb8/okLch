@@ -1,6 +1,17 @@
 import "./style.css";
 
-const app = document.querySelector<HTMLDivElement>("#app")!;
-app.innerHTML = `
-  <h1>okLch</h1>
-`;
+const colorInput = document.getElementById("colorInput") as HTMLInputElement;
+const colorValue = document.getElementById("colorValue") as HTMLSpanElement;
+const previewBox = document.getElementById("preview") as HTMLDivElement;
+
+const updateColor = (color: string): void => {
+  colorValue.textContent = color;
+  previewBox.style.backgroundColor = color;
+};
+
+updateColor(colorInput.value);
+
+colorInput.addEventListener("input", (event: Event) => {
+  const target = event.target as HTMLInputElement;
+  updateColor(target.value);
+});
