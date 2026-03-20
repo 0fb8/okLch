@@ -3,6 +3,7 @@ import "./style.css";
 const colorInput = document.getElementById("colorInput") as HTMLInputElement;
 const colorValue = document.getElementById("colorValue") as HTMLSpanElement;
 const previewBox = document.getElementById("preview") as HTMLDivElement;
+const palette = document.getElementById("palette") as HTMLDivElement;
 
 const updateColor = (color: string): void => {
   const oklchText = `oklch(from ${color} l c h)`;
