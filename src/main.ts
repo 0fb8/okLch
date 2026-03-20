@@ -28,8 +28,10 @@ const updatePalette = (color: string) => {
 };
 
 updateColor(colorInput.value);
+updatePalette(colorInput.value);
 
 colorInput.addEventListener("input", (event: Event) => {
   const target = event.target as HTMLInputElement;
   updateColor(target.value);
+  updatePalette(target.value);
 });
